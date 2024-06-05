@@ -1,32 +1,83 @@
-/*#button1{
-    width: 40px;
-    height: 40px;
-    background-image: url("https://img.icons8.com/windows/96/light.png");
-    background-size: cover;
+:root{
+    --invertValue: 70%;
+    --ShowLightIcon: block;
+    --HideLightIcon: none;
+    --backgrondColor: #505050;
+    --navbarColor: #252525;
+    --navbarText: #e6e6e6;
+    --filterInvert: 78%;
+    --filterSepia: 87%;
+    --filterSaturate: 937%;
+    --filterHue: 141deg;
+    --filterBrightness: 103%;
+    --filterContrast: 103%;
 }
-#button1:hover{
-    background-image: url("https://img.icons8.com/windows/96/light-on.png");
-}*/
+
+:root:has(#darkmode-toggle:checked){
+    --invertValue: 10%;
+    --ShowLightIcon: block;
+    --HideLightIcon: none;
+    --backgrondColor: #e6e6e6;
+    --navbarColor: #cdcdcd;
+    --navbarText: #252525;
+    --filterInvert: 14%;
+    --filterSepia: 96%;
+    --filterSaturate: 4381%;
+    --filterHue: 242deg;
+    --filterBrightness: 70%;
+    --filterContrast: 149%;
+}
+
+body{
+    background-color: var(--backgrondColor);
+}
+
+.navbar{
+    background-color: var(--navbarColor);
+}
+
+.nav-link{
+    color: var(--navbarText);
+}
+
+.navLogo{
+    filter: invert(var(--filterInvert)) sepia(var(--filterSepia)) saturate(var(--filterSaturate)) hue-rotate(var(--filterHue)) brightness(var(--filterBrightness)) contrast(var(--filterContrast));
+}
+
 .imageBox{
     width: 30px;
     height: 40px;
 }
-.imageBox .hoverImg{
-    opacity: 1;
-    display: block;
+.imageBox .lightIconOff{
+    display: var(--ShowLightIcon);
+    transform: scaleY(-1); filter: invert(var(--invertValue));
 }
-.imageBox:hover .hoverImg{
-    display: none;
+.imageBox:hover .lightIconOff{
+    display: var(--HideLightIcon);
+    transform: scaleY(-1); filter: invert(var(--invertValue));
 }
-.imageBox .hoverImn{
-    opacity: 1;
-    display: none;
+.imageBox .lightIconOn{
+    display: var(--HideLightIcon);
+    transform: scaleY(-1); filter: invert(var(--invertValue));
 }
-.imageBox:hover .hoverImn{
-    display: block;
+.imageBox:hover .lightIconOn{
+    display: var(--ShowLightIcon);
+    transform: scaleY(-1); filter: invert(var(--invertValue));
 }
+
 input{
     width: 0;
     height: 0;
     display: none;
 }
+
+footer{
+    padding-top: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--navbarColor);
+    color: var(--navbarText);
+    text-align: center;
+ }
