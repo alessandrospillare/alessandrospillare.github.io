@@ -1,0 +1,32 @@
+/*#button1{
+    width: 40px;
+    height: 40px;
+    background-image: url("https://img.icons8.com/windows/96/light.png");
+    background-size: cover;
+}
+#button1:hover{
+    background-image: url("https://img.icons8.com/windows/96/light-on.png");
+}*/
+.imageBox{
+    width: 30px;
+    height: 40px;
+}
+.imageBox .hoverImg{
+    opacity: 1;
+    display: block;
+}
+.imageBox:hover .hoverImg{
+    display: none;
+}
+.imageBox .hoverImn{
+    opacity: 1;
+    display: none;
+}
+.imageBox:hover .hoverImn{
+    display: block;
+}
+input{
+    width: 0;
+    height: 0;
+    display: none;
+}
