@@ -3,6 +3,7 @@
     --ShowLightIcon: block;
     --HideLightIcon: none;
     --backgrondColor: #505050;
+    --textColor: #e0e0e0;
     --navbarColor: #252525;
     --navbarText: #e6e6e6;
     --filterInvert: 78%;
@@ -11,13 +12,16 @@
     --filterHue: 141deg;
     --filterBrightness: 103%;
     --filterContrast: 103%;
+    --showOpacity: 1;
+    --hideOpacity: 0;
 }
 
 :root:has(#darkmode-toggle:checked){
-    --invertValue: 10%;
-    --ShowLightIcon: block;
-    --HideLightIcon: none;
+    --invertValue: 30%;
+    --ShowLightIcon: none;
+    --HideLightIcon: block;
     --backgrondColor: #e6e6e6;
+    --textColor: #202020;
     --navbarColor: #cdcdcd;
     --navbarText: #252525;
     --filterInvert: 14%;
@@ -26,10 +30,23 @@
     --filterHue: 242deg;
     --filterBrightness: 70%;
     --filterContrast: 149%;
+    --showOpacity: 0;
+    --hideOpacity: 1;
+}
+
+* {
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
 
 body{
     background-color: var(--backgrondColor);
+    color: var(--textColor);
+}
+
+a{
+    color: var(--navbarText);
 }
 
 .navbar{
@@ -38,6 +55,10 @@ body{
 
 .nav-link{
     color: var(--navbarText);
+}
+
+.navbar-toggler-icon{
+    filter: invert(var(--invertValue));
 }
 
 .navLogo{
@@ -71,6 +92,18 @@ input{
     display: none;
 }
 
+.profilePictureDark{
+    display: var(--ShowLightIcon);
+    opacity: var(--showOpacity);
+    border-radius: 10px;
+}
+
+.profilePictureLight{
+    display: var(--HideLightIcon);
+    opacity: var(--hideOpacity);
+    border-radius: 10px;
+}
+
 footer{
     padding-top: 5px;
     position: fixed;
@@ -80,4 +113,9 @@ footer{
     background-color: var(--navbarColor);
     color: var(--navbarText);
     text-align: center;
- }
+    font-size: small;
+}
+
+footer p{
+    margin-bottom: 5px;
+}
