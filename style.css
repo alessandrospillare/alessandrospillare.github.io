@@ -2,6 +2,8 @@
     --invertValue: 70%;
     --ShowLightIcon: block;
     --HideLightIcon: none;
+    --ShowCVd: block;
+    --ShowCVl: none;
     --backgrondColor: #505050;
     --textColor: #e0e0e0;
     --navbarColor: #252525;
@@ -14,12 +16,15 @@
     --filterContrast: 103%;
     --showOpacity: 1;
     --hideOpacity: 0;
+    --transitionDuration: 0.7s;
 }
 
 :root:has(#darkmode-toggle:checked){
     --invertValue: 30%;
     --ShowLightIcon: none;
     --HideLightIcon: block;
+    --ShowCVd: none;
+    --ShowCVl: block;
     --backgrondColor: #e6e6e6;
     --textColor: #202020;
     --navbarColor: #cdcdcd;
@@ -35,22 +40,34 @@
 }
 
 * {
-    transition-property: color, background-color, border-color;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body{
     background-color: var(--backgrondColor);
     color: var(--textColor);
+    transition-property: color, background-color;
+    transition-duration: var(--transitionDuration);
+    transition-timing-function: ease;
 }
 
 a{
     color: var(--navbarText);
+    transition-property: color, background-color;
+    transition-duration: var(--transitionDuration);
+    transition-timing-function: ease;
 }
 
 .navbar{
     background-color: var(--navbarColor);
+    transition-property: color, background-color;
+    transition-duration: var(--transitionDuration);
+    transition-timing-function: ease;
 }
 
 .nav-link{
@@ -63,6 +80,9 @@ a{
 
 .navLogo{
     filter: invert(var(--filterInvert)) sepia(var(--filterSepia)) saturate(var(--filterSaturate)) hue-rotate(var(--filterHue)) brightness(var(--filterBrightness)) contrast(var(--filterContrast));
+    transition-property: filter;
+    transition-duration: var(--transitionDuration);
+    transition-timing-function: ease-in-out;
 }
 
 .imageBox{
@@ -86,6 +106,14 @@ a{
     transform: scaleY(-1); filter: invert(var(--invertValue));
 }
 
+.CVd{
+    display: var(--ShowCVd);
+}
+
+.CVl{
+    display: var(--ShowCVl);
+}
+
 input{
     width: 0;
     height: 0;
@@ -106,7 +134,7 @@ input{
 
 footer{
     padding-top: 5px;
-    position: fixed;
+    position: static;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -114,6 +142,9 @@ footer{
     color: var(--navbarText);
     text-align: center;
     font-size: small;
+    transition-property: color, background-color;
+    transition-duration: var(--transitionDuration);
+    transition-timing-function: ease;
 }
 
 footer p{
