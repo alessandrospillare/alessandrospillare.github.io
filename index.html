@@ -28,9 +28,24 @@
                             <a class="nav-link float-end CVd" href="CV darkmode pubblico.pdf" target="_blank" title="Download Curriculum Vitae">CV</a>
                             <a class="nav-link float-end CVl" href="CV pubblico.pdf" target="_blank" title="Download Curriculum Vitae">CV</a>
                         </li>
-                        <li class="nav-item ps-5">
+                        <li class="nav-item ps-3">
+                            <a class="nav-link float-end" href="https://www.instagram.com/alessandro_spillare/" target="_blank" title="Instagram">
+                                <img class="IgIcon" width="20" height="20" src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/96/1A1A1A/external-instagram-photo-and-video-sharing-social-networking-service-owned-by-facebook-logo-bold-tal-revivo.png" alt="external-instagram-photo-and-video-sharing-social-networking-service-owned-by-facebook-logo-bold-tal-revivo"/>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link float-end" href="https://www.linkedin.com/in/alessandrospillare/" target="_blank" title="LinkedIn">
+                                <img class="LInIcon" width="25" height="25" src="https://img.icons8.com/ios-filled/500/1A1A1A/linkedin.png" alt="linkedin"/>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn border border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="bottom" onclick="myFunction()" title="Clicca per copiare l'indirizzo email">
+                                <img class="EmIcon" width="26" height="26" src="https://img.icons8.com/ios-filled/100/1A1A1A/message-squared.png" alt="message-squared"/>
+                            </button>
+                        </li>
+                        <li class="nav-item ps-3">
                             <input type="checkbox" id="darkmode-toggle">
-                            <label for="darkmode-toggle" class="nav-link px-0 py-1 imageBox  float-end" href="#" title="Cambia tema">
+                            <label for="darkmode-toggle" class="nav-link px-0 py-2 imageBox float-end" data-bs-toggle="tooltip" data-bs-placement="bottom" href="#" title="Cambia tema">
                                 <img class="lightIconOff" width="30" height="30" src="https://img.icons8.com/windows/96/light.png" alt="light"/>                                    
                                 <img class="lightIconOn" width="30" height="30" src="https://img.icons8.com/windows/96/light-on.png" alt="light-on"/>
                             </label>
@@ -137,6 +152,17 @@
         <footer>
             <p>© Copyright 2024 Alessandro Spillare. Hosted by GitHub Pages. Icons by <a href="icons8.it">Icons8</a></p>
         </footer>
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+            function myFunction() {
+                navigator.clipboard.writeText("alessandro.spillare@gmail.com");
+                
+                alert("alessandro.spillare@gmail.com copiato negli appunti");
+            }
+        </script>
     </body>
 </html>
 
